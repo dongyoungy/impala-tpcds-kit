@@ -1,28 +1,28 @@
 --
--- adjust the source/text schema (tpcds_10000_text)
--- and target/parquet schema (tpcds_10000_parquet)
+-- adjust the source/text schema (tpcds_500_text)
+-- and target/parquet schema (tpcds_500_parquet)
 -- if necessary
 --
 
-use tpcds_10000_parquet;
+use tpcds_500_parquet;
 
-insert overwrite table call_center            select * from tpcds_10000_text.call_center;
-insert overwrite table catalog_page           select * from tpcds_10000_text.catalog_page;
-insert overwrite table customer               select * from tpcds_10000_text.customer;
-insert overwrite table customer_address       select * from tpcds_10000_text.customer_address;
-insert overwrite table customer_demographics  select * from tpcds_10000_text.customer_demographics;
-insert overwrite table date_dim               select * from tpcds_10000_text.date_dim;
-insert overwrite table household_demographics select * from tpcds_10000_text.household_demographics;
-insert overwrite table income_band            select * from tpcds_10000_text.income_band;
-insert overwrite table item                   select * from tpcds_10000_text.item;
-insert overwrite table promotion              select * from tpcds_10000_text.promotion;
-insert overwrite table reason                 select * from tpcds_10000_text.reason;
-insert overwrite table ship_mode              select * from tpcds_10000_text.ship_mode;
-insert overwrite table store                  select * from tpcds_10000_text.store;
-insert overwrite table time_dim               select * from tpcds_10000_text.time_dim;
-insert overwrite table warehouse              select * from tpcds_10000_text.warehouse;
-insert overwrite table web_page               select * from tpcds_10000_text.web_page;
-insert overwrite table web_site               select * from tpcds_10000_text.web_site;
+insert overwrite table call_center            select * from tpcds_500_text.call_center;
+insert overwrite table catalog_page           select * from tpcds_500_text.catalog_page;
+insert overwrite table customer               select * from tpcds_500_text.customer;
+insert overwrite table customer_address       select * from tpcds_500_text.customer_address;
+insert overwrite table customer_demographics  select * from tpcds_500_text.customer_demographics;
+insert overwrite table date_dim               select * from tpcds_500_text.date_dim;
+insert overwrite table household_demographics select * from tpcds_500_text.household_demographics;
+insert overwrite table income_band            select * from tpcds_500_text.income_band;
+insert overwrite table item                   select * from tpcds_500_text.item;
+insert overwrite table promotion              select * from tpcds_500_text.promotion;
+insert overwrite table reason                 select * from tpcds_500_text.reason;
+insert overwrite table ship_mode              select * from tpcds_500_text.ship_mode;
+insert overwrite table store                  select * from tpcds_500_text.store;
+insert overwrite table time_dim               select * from tpcds_500_text.time_dim;
+insert overwrite table warehouse              select * from tpcds_500_text.warehouse;
+insert overwrite table web_page               select * from tpcds_500_text.web_page;
+insert overwrite table web_site               select * from tpcds_500_text.web_site;
 
 
 insert overwrite table inventory
@@ -31,7 +31,7 @@ select inv_item_sk,
        inv_warehouse_sk,
        inv_quantity_on_hand,
        inv_date_sk
-from tpcds_10000_text.inventory;
+from tpcds_500_text.inventory;
 
 insert overwrite table catalog_sales
   partition(cs_sold_date_sk) /*+ clustered,shuffle */
@@ -69,7 +69,7 @@ select cs_sold_time_sk,
        cs_net_paid_inc_ship_tax,
        cs_net_profit,
        cs_sold_date_sk
-from tpcds_10000_text.catalog_sales
+from tpcds_500_text.catalog_sales
 where cs_sold_date_sk is not null;
 
 insert overwrite table catalog_sales
@@ -108,7 +108,7 @@ select cs_sold_time_sk,
        cs_net_paid_inc_ship_tax,
        cs_net_profit,
        cs_sold_date_sk
-from tpcds_10000_text.catalog_sales
+from tpcds_500_text.catalog_sales
 where cs_sold_date_sk is null;
 
 insert overwrite table catalog_returns
@@ -140,7 +140,7 @@ select cr_returned_time_sk,
        cr_store_credit,
        cr_net_loss,
        cr_returned_date_sk
-from tpcds_10000_text.catalog_returns;
+from tpcds_500_text.catalog_returns;
 
 insert overwrite table store_sales
   partition(ss_sold_date_sk) /*+ clustered,shuffle */
@@ -167,7 +167,7 @@ select ss_sold_time_sk,
        ss_net_paid_inc_tax,
        ss_net_profit,
        ss_sold_date_sk
-from tpcds_10000_text.store_sales
+from tpcds_500_text.store_sales
 where ss_sold_date_sk is not null;
 
 
@@ -196,7 +196,7 @@ select ss_sold_time_sk,
        ss_net_paid_inc_tax,
        ss_net_profit,
        ss_sold_date_sk
-from tpcds_10000_text.store_sales
+from tpcds_500_text.store_sales
 where ss_sold_date_sk is null;
 
 insert overwrite table store_returns
@@ -221,7 +221,7 @@ select sr_return_time_sk,
        sr_store_credit,
        sr_net_loss,
        sr_returned_date_sk
-from tpcds_10000_text.store_returns;
+from tpcds_500_text.store_returns;
 
 insert overwrite table web_sales
   partition(ws_sold_date_sk) /*+ clustered,shuffle */
@@ -259,7 +259,7 @@ select ws_sold_time_sk,
        ws_net_paid_inc_ship_tax,
        ws_net_profit,
        ws_sold_date_sk
-from tpcds_10000_text.web_sales
+from tpcds_500_text.web_sales
 where ws_sold_date_sk is not null;
 
 insert overwrite table web_sales
@@ -298,7 +298,7 @@ select ws_sold_time_sk,
        ws_net_paid_inc_ship_tax,
        ws_net_profit,
        ws_sold_date_sk
-from tpcds_10000_text.web_sales
+from tpcds_500_text.web_sales
 where ws_sold_date_sk is null;
 
 insert overwrite table web_returns
@@ -327,7 +327,7 @@ select wr_returned_time_sk,
        wr_account_credit,
        wr_net_loss,
        wr_returned_date_sk
-from tpcds_10000_text.web_returns;
+from tpcds_500_text.web_returns;
 
 --
 -- dimension tables

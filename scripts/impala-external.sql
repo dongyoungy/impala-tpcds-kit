@@ -1,12 +1,12 @@
 --
 -- modify this file to contain the correct:
--- * schema name (currently tpcds_10000_text)
--- * location path (currently /tmp/tpc-ds/sf10000)
+-- * schema name (currently tpcds_500_text)
+-- * location path (currently /tmp/tpc-ds/sf500)
 
-create schema tpcds_10000_text;
-use tpcds_10000_text;
+create schema if not exists tpcds_500_text;
+use tpcds_500_text;
 
-create external table call_center (
+create external table if not exists call_center (
   cc_call_center_sk int,
   cc_call_center_id varchar(16),
   cc_rec_start_date varchar(10),
@@ -41,11 +41,11 @@ create external table call_center (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/call_center'
+location '/tmp/tpc-ds/sf500/call_center'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table catalog_page (
+create external table if not exists catalog_page (
   cp_catalog_page_sk int,
   cp_catalog_page_id varchar(16),
   cp_start_date_sk int,
@@ -58,11 +58,11 @@ create external table catalog_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/catalog_page'
+location '/tmp/tpc-ds/sf500/catalog_page'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table catalog_returns (
+create external table if not exists catalog_returns (
   cr_returned_date_sk int,
   cr_returned_time_sk int,
   cr_item_sk int,
@@ -93,11 +93,11 @@ create external table catalog_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/catalog_returns'
+location '/tmp/tpc-ds/sf500/catalog_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table catalog_sales (
+create external table if not exists catalog_sales (
   cs_sold_date_sk int,
   cs_sold_time_sk int,
   cs_ship_date_sk int,
@@ -135,11 +135,11 @@ create external table catalog_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/catalog_sales'
+location '/tmp/tpc-ds/sf500/catalog_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table customer (
+create external table if not exists customer (
   c_customer_sk int,
   c_customer_id varchar(16),
   c_current_cdemo_sk int,
@@ -161,11 +161,11 @@ create external table customer (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/customer'
+location '/tmp/tpc-ds/sf500/customer'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table customer_address (
+create external table if not exists customer_address (
   ca_address_sk int,
   ca_address_id varchar(16),
   ca_street_number varchar(10),
@@ -182,11 +182,11 @@ create external table customer_address (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/customer_address'
+location '/tmp/tpc-ds/sf500/customer_address'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table customer_demographics (
+create external table if not exists customer_demographics (
   cd_demo_sk int,
   cd_gender varchar(1),
   cd_marital_status varchar(1),
@@ -199,11 +199,11 @@ create external table customer_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/customer_demographics'
+location '/tmp/tpc-ds/sf500/customer_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table date_dim (
+create external table if not exists date_dim (
   d_date_sk int,
   d_date_id varchar(16),
   d_date varchar(10),
@@ -235,11 +235,11 @@ create external table date_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/date_dim'
+location '/tmp/tpc-ds/sf500/date_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table household_demographics (
+create external table if not exists household_demographics (
   hd_demo_sk int,
   hd_income_band_sk int,
   hd_buy_potential varchar(15),
@@ -248,22 +248,22 @@ create external table household_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/household_demographics'
+location '/tmp/tpc-ds/sf500/household_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table income_band (
+create external table if not exists income_band (
   ib_income_band_sk int,
   ib_lower_bound int,
   ib_upper_bound int
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/income_band'
+location '/tmp/tpc-ds/sf500/income_band'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table inventory (
+create external table if not exists inventory (
   inv_date_sk int,
   inv_item_sk int,
   inv_warehouse_sk int,
@@ -271,11 +271,11 @@ create external table inventory (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/inventory'
+location '/tmp/tpc-ds/sf500/inventory'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table item (
+create external table if not exists item (
   i_item_sk int,
   i_item_id varchar(16),
   i_rec_start_date varchar(10),
@@ -301,11 +301,11 @@ create external table item (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/item'
+location '/tmp/tpc-ds/sf500/item'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table promotion (
+create external table if not exists promotion (
   p_promo_sk int,
   p_promo_id varchar(16),
   p_start_date_sk int,
@@ -328,22 +328,22 @@ create external table promotion (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/promotion'
+location '/tmp/tpc-ds/sf500/promotion'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table reason (
+create external table if not exists reason (
   r_reason_sk int,
   r_reason_id varchar(16),
   r_reason_desc varchar(100)
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_sales'
+location '/tmp/tpc-ds/sf500/web_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table ship_mode (
+create external table if not exists ship_mode (
   sm_ship_mode_sk int,
   sm_ship_mode_id varchar(16),
   sm_type varchar(30),
@@ -353,11 +353,11 @@ create external table ship_mode (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/reason'
+location '/tmp/tpc-ds/sf500/reason'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table store (
+create external table if not exists store (
   s_store_sk int,
   s_store_id varchar(16),
   s_rec_start_date varchar(10),
@@ -390,11 +390,11 @@ create external table store (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/store'
+location '/tmp/tpc-ds/sf500/store'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table store_returns (
+create external table if not exists store_returns (
   sr_returned_date_sk int,
   sr_return_time_sk int,
   sr_item_sk int,
@@ -418,11 +418,11 @@ create external table store_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/store_returns'
+location '/tmp/tpc-ds/sf500/store_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table store_sales (
+create external table if not exists store_sales (
   ss_sold_date_sk int,
   ss_sold_time_sk int,
   ss_item_sk int,
@@ -449,11 +449,11 @@ create external table store_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/store_sales'
+location '/tmp/tpc-ds/sf500/store_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table time_dim (
+create external table if not exists time_dim (
   t_time_sk int,
   t_time_id varchar(16),
   t_time int,
@@ -467,11 +467,11 @@ create external table time_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/time_dim'
+location '/tmp/tpc-ds/sf500/time_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table warehouse (
+create external table if not exists warehouse (
   w_warehouse_sk int,
   w_warehouse_id varchar(16),
   w_warehouse_name varchar(20),
@@ -489,11 +489,11 @@ create external table warehouse (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/warehouse'
+location '/tmp/tpc-ds/sf500/warehouse'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_page (
+create external table if not exists web_page (
   wp_web_page_sk int,
   wp_web_page_id varchar(16),
   wp_rec_start_date varchar(10),
@@ -511,11 +511,11 @@ create external table web_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_page'
+location '/tmp/tpc-ds/sf500/web_page'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_returns (
+create external table if not exists web_returns (
   wr_returned_date_sk int,
   wr_returned_time_sk int,
   wr_item_sk int,
@@ -543,11 +543,11 @@ create external table web_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_returns'
+location '/tmp/tpc-ds/sf500/web_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_sales (
+create external table if not exists web_sales (
   ws_sold_date_sk int,
   ws_sold_time_sk int,
   ws_ship_date_sk int,
@@ -585,11 +585,11 @@ create external table web_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_sales'
+location '/tmp/tpc-ds/sf500/web_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
-create external table web_site (
+create external table if not exists web_site (
   web_site_sk int,
   web_site_id varchar(16),
   web_rec_start_date varchar(10),
@@ -619,8 +619,8 @@ create external table web_site (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_site'
+location '/tmp/tpc-ds/sf500/web_site'
 tblproperties ('serialization.null.format'='')
 ;
 
-show tables;
+show table;
