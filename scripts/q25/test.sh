@@ -1,0 +1,12 @@
+#!/bin/bash
+for ss in store_sales store_sales_uf_1p store_sales_uf_10p store_sales_st_100_ss_sold_date_sk store_sales_st_1000_ss_sold_date_sk store_sales_st_10000_ss_sold_date_sk store_sales_st_100_ss_item_sk_ss_store_sk store_sales_st_1000_ss_item_sk_ss_store_sk store_sales_st_10000_ss_item_sk_ss_store_sk store_sales_uv_1p_ss_item_sk_ss_customer_sk_ss_ticket_number store_sales_uv_10p_ss_item_sk_ss_customer_sk_ss_ticket_number
+do 
+    for sr in store_returns store_returns_uf_1p store_returns_uf_10p store_returns_st_10_sr_item_sk_sr_returned_date_sk store_returns_st_100_sr_returned_date_sk store_returns_st_100_sr_item_sk store_returns_st_1000_sr_returned_date_sk store_returns_st_1000_sr_item_sk store_returns_st_10000_sr_returned_date_sk store_returns_st_10000_sr_item_sk store_returns_uv_1p_sr_item_sk_sr_customer_sk_sr_ticket_number store_returns_uv_10p_sr_item_sk_sr_customer_sk_sr_ticket_number
+    do
+        for cs in catalog_sales catalog_sales_uf_1p catalog_sales_uf_10p catalog_sales_st_100_cs_item_sk catalog_sales_st_1000_cs_item_sk catalog_sales_st_10000_cs_item_sk catalog_sales_st_100_cs_sold_date_sk catalog_sales_st_1000_cs_sold_date_sk catalog_sales_st_10000_cs_sold_date_sk catalog_sales_st_10_cs_item_sk_cs_sold_date_sk catalog_sales_st_100_cs_item_sk_cs_sold_date_sk
+        do 
+            impala-shell -B -i cp-1 -q "use tpcds_5000_parquet; create table tpcds_5000_q25_results.${ss}__${sr}__${cs} as select i_item_id ,i_item_desc ,s_store_id ,s_store_name ,sum(ss_net_profit) as store_sales_profit ,sum(sr_net_loss) as store_returns_loss ,sum(cs_net_profit) as catalog_sales_profit, count(*) as groupsize from ${ss} as store_sales ,${sr} as store_returns ,${cs} as catalog_sales ,date_dim d1 ,date_dim d2 ,date_dim d3 ,store ,item where d1.d_moy = 4 and d1.d_year = 2000 and d1.d_date_sk = ss_sold_date_sk and i_item_sk = ss_item_sk and s_store_sk = ss_store_sk and ss_customer_sk = sr_customer_sk and ss_item_sk = sr_item_sk and ss_ticket_number = sr_ticket_number and sr_returned_date_sk = d2.d_date_sk and d2.d_moy between 4 and 10 and d2.d_year = 2000 and sr_customer_sk = cs_bill_customer_sk and sr_item_sk = cs_item_sk and cs_sold_date_sk = d3.d_date_sk and d3.d_moy between 4 and 10 and d3.d_year = 2000 group by i_item_id ,i_item_desc ,s_store_id ,s_store_name order by i_item_id ,i_item_desc ,s_store_id ,s_store_name;"
+        done
+    done
+done
+mail -s "Test Done" dyoon@umich.edu < /dev/null

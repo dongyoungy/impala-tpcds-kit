@@ -1,0 +1,670 @@
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:23:25 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=6e4fd492b5d3da47:7ec4559700000000
+Modified 1 row(s) in 43.25s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:09 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=6401bca6aeda63e:901e323000000000
+Modified 1 row(s) in 1.92s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:11 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=c4d46f70f6ad30a:1644a39800000000
+Modified 1 row(s) in 1.40s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:13 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=794ce42e7f697076:e7823ee800000000
+Modified 1 row(s) in 7.64s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:21 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a8415eaf37f207a2:4da1e79300000000
+Modified 1 row(s) in 1.90s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_1p', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_1p__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:24 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=114a77e2764445f4:565851fe00000000
+Modified 1 row(s) in 1.39s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_1p', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_1p__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:25 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=aa468ae473ec6c66:b7a1002100000000
+Modified 1 row(s) in 7.03s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_1p', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_1p__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:33 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=3d41ef2db236b3c7:b526dab800000000
+Modified 1 row(s) in 1.90s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_1p', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_1p__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:35 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a54a6979c55d51e7:fa9aff7900000000
+Modified 1 row(s) in 1.79s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_1p', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_1p__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:38 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a942f0b84c396055:724ef02b00000000
+Modified 1 row(s) in 1.81s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_10p', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_10p__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:40 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=be4c0fe4b95b8bec:5d4d36ee00000000
+Modified 1 row(s) in 11.65s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_10p', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_10p__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:52 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=fa4a05aca3685148:fc43a78d00000000
+Modified 1 row(s) in 1.79s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_10p', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_10p__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:54 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=2d4a0a52f25d01dc:c2c87c1400000000
+Modified 1 row(s) in 1.49s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_10p', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_10p__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:56 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=5d4034886360b188:f61268a900000000
+Modified 1 row(s) in 1.81s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_uf_10p', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_uf_10p__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:24:58 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=5941762497e4e8e5:103d209600000000
+Modified 1 row(s) in 1.80s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_1p', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_1p__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:01 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=8d4ba0475bf94a6f:b88399100000000
+Modified 1 row(s) in 1.81s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_1p', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_1p__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:03 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=864bb096a03a7a0a:69ec91f000000000
+Modified 1 row(s) in 1.67s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_1p', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_1p__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:05 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=2c4f68180a1328bd:cdfc292d00000000
+Modified 1 row(s) in 6.20s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_1p', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_1p__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:12 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a5400cdcbb83b4d9:ddcdd30700000000
+Modified 1 row(s) in 1.26s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_1p', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_1p__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:14 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=8b46d6e332adb8f9:d0ad5b8a00000000
+Modified 1 row(s) in 1.66s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_10p', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_10p__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:16 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=8946aa0b7544413f:1e6a10db00000000
+Modified 1 row(s) in 6.83s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_10p', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_10p__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:23 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=804e9628aae041c5:fe29047e00000000
+Modified 1 row(s) in 1.66s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_10p', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_10p__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:25 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9441ad778ecde44e:8ad227fe00000000
+Modified 1 row(s) in 3.77s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_10p', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_10p__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:29 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=264e1c495854c992:a6665f1500000000
+Modified 1 row(s) in 1.86s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_uv_10p', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_uv_10p__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:32 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=bc4d100bb3313016:eca85cad00000000
+Modified 1 row(s) in 1.68s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_100', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_100__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:34 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=b4cab0ab1e043ce:592599e100000000
+Modified 1 row(s) in 6.72s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_100', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_100__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:41 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=e44552783c2746bb:fc753f5600000000
+Modified 1 row(s) in 5.69s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_100', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_100__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:47 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=3b403a2a9b6d9a0f:d5cc00ef00000000
+Modified 1 row(s) in 1.26s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_100', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_100__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:49 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9d46ae01e1ac4944:997f13d200000000
+Modified 1 row(s) in 1.77s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_100', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_100__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:51 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=4a45374353483e04:49693a4000000000
+Modified 1 row(s) in 1.76s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_1000', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_1000__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:53 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=543253b5ce8cc08:278c4bb400000000
+Modified 1 row(s) in 1.90s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_1000', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_1000__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:56 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9d44cf6b7bbca807:a96fc4c000000000
+Modified 1 row(s) in 1.76s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_1000', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_1000__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:25:58 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=e14b82fc44e37025:8cf0efd900000000
+Modified 1 row(s) in 1.66s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_1000', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_1000__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:26:00 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=c148ba6cc999d11b:eba8055b00000000
+Modified 1 row(s) in 1.66s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_1000', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_1000__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:26:02 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=dd4f352536480a20:c1c0dea00000000
+Modified 1 row(s) in 1.79s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:26:04 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+ERROR: AnalysisException: Could not resolve table reference: 'tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns'
+
+Could not execute command: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:26:05 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+ERROR: AnalysisException: Could not resolve table reference: 'tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_uf_1p'
+
+Could not execute command: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:26:05 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+ERROR: AnalysisException: Could not resolve table reference: 'tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_uf_10p'
+
+Could not execute command: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:26:06 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+ERROR: AnalysisException: Could not resolve table reference: 'tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_q75_uv_1p'
+
+Could not execute command: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-18 16:26:06 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+ERROR: AnalysisException: Could not resolve table reference: 'tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_q75_uv_10p'
+
+Could not execute command: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10000', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10000__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_10', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_10__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:43:53 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=b1461d1ff6b15d02:224d130500000000
+Modified 1 row(s) in 2.41s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_10', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_10__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:43:56 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=4a4937793833362d:f1e33be700000000
+Modified 1 row(s) in 1.76s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_10', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_10__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:43:58 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=70493a44cb2fe585:7e8903a100000000
+Modified 1 row(s) in 1.66s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_10', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_10__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:44:00 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=fa4e646dc4fb3e4d:687ff53400000000
+Modified 1 row(s) in 1.66s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_g_10', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_g_10__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:44:02 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=4a421b208a22e15a:23cec31f00000000
+Modified 1 row(s) in 1.66s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:44:04 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=748a77a5266a966:e84635100000000
+Modified 1 row(s) in 1.80s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:44:06 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=b64f14d2826da1b3:dc0fc3e200000000
+Modified 1 row(s) in 1.86s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:44:09 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=dd4cc70d7124bcd4:6df6d30f00000000
+Modified 1 row(s) in 1.76s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:44:11 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=15440e7c659f42a1:d40679ce00000000
+Modified 1 row(s) in 1.76s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_p_10', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_p_10__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-21 12:44:13 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=1405cb61fdc185b:5e6e3b4e00000000
+Modified 1 row(s) in 1.76s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_10', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_10__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:27 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=b44b4fb81a052dc:c42bbef400000000
+Modified 1 row(s) in 5.92s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_10', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_10__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:33 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9240df566856c89e:8d7115f500000000
+Modified 1 row(s) in 1.60s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_10', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_10__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:35 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a4435b86bfb84f90:e8f2f8900000000
+Modified 1 row(s) in 1.49s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_10', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_10__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:37 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=7145bbf0ff4a687c:d64ffcd900000000
+Modified 1 row(s) in 1.39s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_10', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_10__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:39 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=e842a1b22de2bcfc:161273ef00000000
+Modified 1 row(s) in 1.50s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_100', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_100__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:41 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=b4497de9555a3c84:b5d36f4700000000
+Modified 1 row(s) in 1.72s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_100', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_100__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:43 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9f4e3fa36a388669:823e2f3500000000
+Modified 1 row(s) in 1.41s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_100', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_100__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:45 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=104e406e11d28f73:99ed2b7500000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_100', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_100__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:47 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=82481a9bc823bcc1:8df3a7ef00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_100', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_100__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:49 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=43446638a572bf27:df6e525000000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_1000', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_1000__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:51 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=4948c96712dedc53:bba65c0e00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_1000', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_1000__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:53 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=60431d6664f7cc72:a81d098600000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_1000', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_1000__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:55 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=bb42237a62e0c7db:27c9a4e300000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_1000', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_1000__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:57 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=f54d03fa71166f4b:88d2faa600000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_1000', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_1000__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:22:59 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=59405f7e8dcad6d9:b865170100000000
+Modified 1 row(s) in 1.50s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_10', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_10__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:00 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=b347f3b9c9f8f2a1:afd1373e00000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_10', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_10__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:02 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=904eadd90c8d708f:da89efd700000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_10', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_10__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:04 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=7949ea11e64cdecb:6e0558ea00000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_10', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_10__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:06 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=8944ba93fa26f0b6:62d9f45800000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_10', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_10__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:08 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=3a4eb0331ffb586a:a6b6be1800000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_100', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_100__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:10 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=e041b48475803f22:87253b8b00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_100', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_100__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:13 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=7e4b4fa9db81f8bf:594903a600000000
+Modified 1 row(s) in 1.62s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_100', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_100__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:15 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=994700a90a21dfee:53ddcf3d00000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_100', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_100__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:17 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=cd4b94de2fa84baa:fb24c81a00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_100', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_100__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:18 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=c454662b4c02927:66b58e3000000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_1000', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_1000__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:20 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=2c4837d915b217e8:a937567800000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_1000', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_1000__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:22 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=2e4f237826dc65b6:a8b3e72b00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_1000', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_1000__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:24 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=5940518a4e50f030:5fefa93d00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_1000', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_1000__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:26 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=df4fad0c21fb1506:96d370e100000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_manufact_id_1000', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_manufact_id_1000__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:28 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=1a46c4023bdc5032:27bb420200000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_10', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_10__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:30 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=1b4a6ebde5827c74:e7bd5df000000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_10', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_10__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:32 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=8046eb6573a4fae4:1f5955aa00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_10', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_10__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:34 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=f446e29646bccb0f:c0aef33800000000
+Modified 1 row(s) in 1.60s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_10', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_10__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:36 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=6b4f9251a97155e3:d69178a500000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_10', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_10__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:38 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=65486e5392fca12d:751c1a2f00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_100', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_100__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:40 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9e4a50530a912c89:7273c88e00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_100', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_100__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:42 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=3f4d16bfc43a0531:4fa5ca3000000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_100', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_100__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:44 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=e942ca82fd574b3b:f259bc00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_100', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_100__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:46 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a7409402d01b2c70:3cd1233a00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_100', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_100__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:48 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=1b4cbcd38308bdc1:6f53c25d00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_1000', 'store_returns', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_1000__store_returns as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:50 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=e7426e38868320c0:3194a7fc00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_1000', 'store_returns_uf_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_1000__store_returns_uf_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:52 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a6460493cd36c75e:f902996a00000000
+Modified 1 row(s) in 1.52s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_1000', 'store_returns_uf_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_1000__store_returns_uf_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:54 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=1b4202d4f63a34c9:26e71ee500000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_1000', 'store_returns_q75_uv_1p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_1000__store_returns_q75_uv_1p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:56 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=6c482328b39edc33:ffdd8caa00000000
+Modified 1 row(s) in 1.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: insert into tpcds_5000_q75_result.eval select 'store_sales_q75_st_d_year_i_category_id_1000', 'store_returns_q75_uv_10p', count(*), (9329-count(*)) / 9329, avg((abs(((t.sales_cnt / t.groupsize * orig.groupsize) - orig.sales_cnt) / orig.sales_cnt) + abs(((t.sales_amt / t.groupsize * orig.groupsize) - orig.sales_amt) / orig.sales_amt) ) / 2) from tpcds_5000_q75_result.store_sales_q75_st_d_year_i_category_id_1000__store_returns_q75_uv_10p as t, tpcds_5000_q75_result.original as orig where t.d_year = orig.d_year and t.i_brand_id = orig.i_brand_id and t.i_class_id = orig.i_class_id and t.i_category_id = orig.i_category_id and t.i_manufact_id = orig.i_manufact_id
+Query submitted at: 2018-09-24 10:23:58 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a54db47e77f03504:47c93f3500000000
+Modified 1 row(s) in 1.64s

@@ -1,0 +1,81 @@
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table tpcds_q24.store_sales_uf_1p__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM store_sales_uf_1p as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 29130 row(s)
+Fetched 1 row(s) in 12.97s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table tpcds_q24.store_sales_uf_10p__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM store_sales_uf_10p as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 291610 row(s)
+Fetched 1 row(s) in 41.31s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table tpcds_q24.store_sales_st_100_ss_item_sk_ss_store_sk__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM store_sales_st_100_ss_item_sk_ss_store_sk as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 2462815 row(s)
+Fetched 1 row(s) in 151.64s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table tpcds_q24.ss_st_q24_1_10__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_1_10 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 50059 row(s)
+Fetched 1 row(s) in 17.87s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table tpcds_q24.ss_st_q24_1_100__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_1_100 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 2462815 row(s)
+Fetched 1 row(s) in 177.68s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table tpcds_q24.ss_st_q24_2_10__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_2_10 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 1496617 row(s)
+Fetched 1 row(s) in 121.47s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table tpcds_q24.ss_st_q24_2_100__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_2_100 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 2464605 row(s)
+Fetched 1 row(s) in 195.71s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: drop table if exists tpcds_q24.ss_st_q24_1_10__store_returns
+Query: create table tpcds_q24.ss_st_q24_1_10__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_1_10 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 50059 row(s)
+Fetched 1 row(s) in 18.77s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: drop table if exists tpcds_q24.ss_st_q24_1_100__store_returns
+Query: create table tpcds_q24.ss_st_q24_1_100__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_1_100 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 2462815 row(s)
+Fetched 1 row(s) in 132.46s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: drop table if exists tpcds_q24.ss_st_q24_2_10__store_returns
+Query: create table tpcds_q24.ss_st_q24_2_10__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_2_10 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 1496617 row(s)
+Fetched 1 row(s) in 157.51s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: drop table if exists tpcds_q24.ss_st_q24_2_100__store_returns
+Query: create table tpcds_q24.ss_st_q24_2_100__store_returns stored as parquet as SELECT c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size, Sum(ss_net_profit) netpaid, count(*) as groupsize FROM ss_st_q24_2_100 as store_sales, store_returns as store_returns, store, item, customer, customer_address WHERE ss_ticket_number = sr_ticket_number AND ss_item_sk = sr_item_sk AND ss_customer_sk = c_customer_sk AND ss_item_sk = i_item_sk AND ss_store_sk = s_store_sk AND c_birth_country = Upper(ca_country) AND s_zip = ca_zip AND s_market_id = 8 GROUP BY c_last_name, c_first_name, s_store_name, ca_state, s_state, i_color, i_current_price, i_manager_id, i_units, i_size
+Inserted 2464605 row(s)
+Fetched 1 row(s) in 299.71s

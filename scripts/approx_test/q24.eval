@@ -1,0 +1,8 @@
+original, 2957372, 1.087186958105251e-10
+ss_st_q24_1_100__store_returns, 2462815, 1.506445463266902e-06
+ss_st_q24_1_10__store_returns, 50059, 0
+ss_st_q24_2_100__store_returns, 2464605, 7.453113307903821e-06
+ss_st_q24_2_10__store_returns, 1496617, 0
+store_sales_st_100_ss_item_sk_ss_store_sk__store_returns, 2462815, 1.506445463266902e-06
+store_sales_uf_10p__store_returns, 291610, 0.0001413340059011494
+store_sales_uf_1p__store_returns, 29130, 0

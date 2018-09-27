@@ -1,10 +1,10 @@
 --
 -- modify this file to contain the correct:
--- * schema name (currently tpcds_500_text)
--- * location path (currently /tmp/tpc-ds/sf500)
+-- * schema name (currently tpcds_5000_text)
+-- * location path (currently /tmp/tpc-ds/sf5000)
 
-create schema if not exists tpcds_500_text;
-use tpcds_500_text;
+create schema if not exists tpcds_5000_text;
+use tpcds_5000_text;
 
 create external table if not exists call_center (
   cc_call_center_sk int,
@@ -41,7 +41,7 @@ create external table if not exists call_center (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/call_center'
+location '/tmp/tpc-ds/sf5000/call_center'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -58,7 +58,7 @@ create external table if not exists catalog_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/catalog_page'
+location '/tmp/tpc-ds/sf5000/catalog_page'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -93,7 +93,7 @@ create external table if not exists catalog_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/catalog_returns'
+location '/tmp/tpc-ds/sf5000/catalog_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -135,7 +135,7 @@ create external table if not exists catalog_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/catalog_sales'
+location '/tmp/tpc-ds/sf5000/catalog_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -161,7 +161,7 @@ create external table if not exists customer (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/customer'
+location '/tmp/tpc-ds/sf5000/customer'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -182,7 +182,7 @@ create external table if not exists customer_address (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/customer_address'
+location '/tmp/tpc-ds/sf5000/customer_address'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -199,7 +199,7 @@ create external table if not exists customer_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/customer_demographics'
+location '/tmp/tpc-ds/sf5000/customer_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -235,7 +235,7 @@ create external table if not exists date_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/date_dim'
+location '/tmp/tpc-ds/sf5000/date_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -248,7 +248,7 @@ create external table if not exists household_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/household_demographics'
+location '/tmp/tpc-ds/sf5000/household_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -259,7 +259,7 @@ create external table if not exists income_band (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/income_band'
+location '/tmp/tpc-ds/sf5000/income_band'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -271,7 +271,7 @@ create external table if not exists inventory (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/inventory'
+location '/tmp/tpc-ds/sf5000/inventory'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -301,7 +301,7 @@ create external table if not exists item (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/item'
+location '/tmp/tpc-ds/sf5000/item'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -328,7 +328,7 @@ create external table if not exists promotion (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/promotion'
+location '/tmp/tpc-ds/sf5000/promotion'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -339,7 +339,7 @@ create external table if not exists reason (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/reason'
+location '/tmp/tpc-ds/sf5000/reason'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -353,7 +353,7 @@ create external table if not exists ship_mode (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/ship_mode'
+location '/tmp/tpc-ds/sf5000/ship_mode'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -390,7 +390,7 @@ create external table if not exists store (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/store'
+location '/tmp/tpc-ds/sf5000/store'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -418,7 +418,7 @@ create external table if not exists store_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/store_returns'
+location '/tmp/tpc-ds/sf5000/store_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -449,7 +449,7 @@ create external table if not exists store_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/store_sales'
+location '/tmp/tpc-ds/sf5000/store_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -467,7 +467,7 @@ create external table if not exists time_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/time_dim'
+location '/tmp/tpc-ds/sf5000/time_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -489,7 +489,7 @@ create external table if not exists warehouse (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/warehouse'
+location '/tmp/tpc-ds/sf5000/warehouse'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -511,7 +511,7 @@ create external table if not exists web_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/web_page'
+location '/tmp/tpc-ds/sf5000/web_page'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -543,7 +543,7 @@ create external table if not exists web_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/web_returns'
+location '/tmp/tpc-ds/sf5000/web_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -585,7 +585,7 @@ create external table if not exists web_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/web_sales'
+location '/tmp/tpc-ds/sf5000/web_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -619,7 +619,7 @@ create external table if not exists web_site (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf500/web_site'
+location '/tmp/tpc-ds/sf5000/web_site'
 tblproperties ('serialization.null.format'='')
 ;
 
