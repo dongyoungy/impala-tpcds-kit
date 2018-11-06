@@ -10,12 +10,12 @@ from
   ,call_center
 where
     cast(d_date as timestamp) between cast('1999-04-01' as timestamp) and
-           (cast('1999-04-01' as timestamp) + interval '60' day)
+           date_add(cast('1999-04-01' as timestamp),60)
 and cs1.cs_ship_date_sk = d_date_sk
 and cs1.cs_ship_addr_sk = ca_address_sk
 and ca_state = 'IA'
 and cs1.cs_call_center_sk = cc_call_center_sk
-and cc_county in ('Mobile County','Maverick County','Huron County','Kittitas County',
+and cc_county in ('Ziebach County','Maverick County','Huron County','Kittitas County',
                   'Fairfield County'
 )
 and exists (select *

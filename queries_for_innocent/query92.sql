@@ -9,7 +9,7 @@ where
 i_manufact_id = 269
 and i_item_sk = ws_item_sk
 and cast(d_date as timestamp) between cast('1998-03-18' as timestamp) and
-        (cast('1998-03-18' as timestamp) + INTERVAL '90' day)
+        date_add(cast('1998-03-18' as timestamp), 90)
 and d_date_sk = ws_sold_date_sk
 and ws_ext_discount_amt
      > (
@@ -21,7 +21,7 @@ and ws_ext_discount_amt
          WHERE
               ws_item_sk = i_item_sk
           and cast(d_date as timestamp) between cast('1998-03-18' as timestamp) and
-                             (cast('1998-03-18' as timestamp) + interval '90' day)
+                             date_add(cast('1998-03-18' as timestamp),90)
           and d_date_sk = ws_sold_date_sk
       )
 order by sum(ws_ext_discount_amt)

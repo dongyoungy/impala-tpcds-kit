@@ -10,7 +10,7 @@ from
   ,web_site
 where
     cast(d_date as timestamp) between cast('1999-05-01' as timestamp) and
-           (cast('1999-05-01' as timestamp) + interval '60' day)
+           date_add(cast('1999-05-01' as timestamp), 60)
 and ws1.ws_ship_date_sk = d_date_sk
 and ws1.ws_ship_addr_sk = ca_address_sk
 and ca_state = 'TX'

@@ -18,8 +18,8 @@ select
  and i_item_sk          = cs_item_sk
  and cs_warehouse_sk    = w_warehouse_sk
  and cs_sold_date_sk    = d_date_sk
- and cast(d_date as timestamp) between (cast ('1998-04-08' as timestamp) - interval '30' day)
-                and (cast ('1998-04-08' as timestamp) + interval '30' day)
+ and cast(d_date as timestamp) between date_add(cast ('1998-04-08' as timestamp), -30)
+                and date_add(cast ('1998-04-08' as timestamp),30)
  group by
     w_state,i_item_id
  order by w_state,i_item_id

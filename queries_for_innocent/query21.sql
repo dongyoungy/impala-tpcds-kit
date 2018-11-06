@@ -16,8 +16,8 @@ select  *
      and i_item_sk          = inv_item_sk
      and inv_warehouse_sk   = w_warehouse_sk
      and inv_date_sk    = d_date_sk
-     and cast(d_date as timestamp) between (cast ('1998-04-08' as timestamp) - interval '30' day)
-                    and (cast ('1998-04-08' as timestamp) + interval '30' day)
+     and cast(d_date as timestamp) between date_add(cast ('1998-04-08' as timestamp), -30)
+                    and date_add(cast ('1998-04-08' as timestamp),30)
    group by w_warehouse_name, i_item_id) x
  where (case when inv_before > 0
              then inv_after / inv_before
