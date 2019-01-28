@@ -872,3 +872,429 @@ from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and c
 where tmp.rownum <= 100 or (tmp.rownum > 100 and rand(unix_timestamp()) < (100 / 10) / tmp.groupsize)
 Query submitted at: 2018-09-27 15:19:20 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
 Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=c34eac7ccd399a71:4814cc8f00000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 6598235 row(s) in 19945.25s
+Query: create table if not exists cs_st_1_1000 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table cs_st_1_1000
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by w_state, i_item_id order by w_state, i_item_id) as rownum, count(*) over (partition by w_state, i_item_id) as groupsize
+from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and cs_item_sk = i_item_sk order by rand()) tmp
+where tmp.rownum <= 1000 or (tmp.rownum > 1000 and rand(unix_timestamp()) < (1000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-27 20:51:46 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=d94b3747103b7b6a:8c3ada5300000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 65954117 row(s) in 18172.53s
+Query: create table if not exists ss_st_3_100 like tpcds_5000_text.store_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table ss_st_3_100
+select
+ss_sold_date_sk,ss_sold_time_sk,ss_item_sk,ss_customer_sk,ss_cdemo_sk,ss_hdemo_sk,ss_addr_sk,ss_store_sk,ss_promo_sk,ss_ticket_number,ss_quantity,ss_wholesale_cost,ss_list_price,ss_sales_price,ss_ext_discount_amt,ss_ext_sales_price,ss_ext_wholesale_cost,ss_ext_list_price,ss_ext_tax,ss_coupon_amt,ss_net_paid,ss_net_paid_inc_tax,ss_net_profit,c_customer_sk,c_customer_id,c_current_cdemo_sk,c_current_hdemo_sk,c_current_addr_sk,c_first_shipto_date_sk,c_first_sales_date_sk,c_salutation,c_first_name,c_last_name,c_preferred_cust_flag,c_birth_day,c_birth_month,c_birth_year,c_birth_country,c_login,c_email_address,c_last_review_date,i_item_sk,i_item_id,i_rec_start_date,i_rec_end_date,i_item_desc,i_current_price,i_wholesale_cost,i_brand_id,i_brand,i_class_id,i_class,i_category_id,i_category,i_manufact_id,i_manufact,i_size,i_formulation,i_color,i_units,i_container,i_manager_id,i_product_name,s_store_sk,s_store_id,s_rec_start_date,s_rec_end_date,s_closed_date_sk,s_store_name,s_number_employees,s_floor_space,s_hours,s_manager,s_market_id,s_geography_class,s_market_desc,s_market_manager,s_division_id,s_division_name,s_company_id,s_company_name,s_street_number,s_street_name,s_street_type,s_suite_number,s_city,s_county,s_state,s_zip,s_country,s_gmt_offset,s_tax_precentage,rand(unix_timestamp()) as v_rand
+from
+(select *, row_number() over (partition by ss_store_sk order by ss_store_sk) as rownum, count(*) over (partition by ss_store_sk) as groupsize
+from store_sales order by rand()) tmp
+where tmp.rownum <= 100 or (tmp.rownum > 100 and rand(unix_timestamp()) < (100 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 01:54:38 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+ERROR: AnalysisException: Could not resolve column/field reference: 'c_customer_sk'
+
+Could not execute command: insert overwrite table ss_st_3_100
+select
+ss_sold_date_sk,ss_sold_time_sk,ss_item_sk,ss_customer_sk,ss_cdemo_sk,ss_hdemo_sk,ss_addr_sk,ss_store_sk,ss_promo_sk,ss_ticket_number,ss_quantity,ss_wholesale_cost,ss_list_price,ss_sales_price,ss_ext_discount_amt,ss_ext_sales_price,ss_ext_wholesale_cost,ss_ext_list_price,ss_ext_tax,ss_coupon_amt,ss_net_paid,ss_net_paid_inc_tax,ss_net_profit,c_customer_sk,c_customer_id,c_current_cdemo_sk,c_current_hdemo_sk,c_current_addr_sk,c_first_shipto_date_sk,c_first_sales_date_sk,c_salutation,c_first_name,c_last_name,c_preferred_cust_flag,c_birth_day,c_birth_month,c_birth_year,c_birth_country,c_login,c_email_address,c_last_review_date,i_item_sk,i_item_id,i_rec_start_date,i_rec_end_date,i_item_desc,i_current_price,i_wholesale_cost,i_brand_id,i_brand,i_class_id,i_class,i_category_id,i_category,i_manufact_id,i_manufact,i_size,i_formulation,i_color,i_units,i_container,i_manager_id,i_product_name,s_store_sk,s_store_id,s_rec_start_date,s_rec_end_date,s_closed_date_sk,s_store_name,s_number_employees,s_floor_space,s_hours,s_manager,s_market_id,s_geography_class,s_market_desc,s_market_manager,s_division_id,s_division_name,s_company_id,s_company_name,s_street_number,s_street_name,s_street_type,s_suite_number,s_city,s_county,s_state,s_zip,s_country,s_gmt_offset,s_tax_precentage,rand(unix_timestamp()) as v_rand
+from
+(select *, row_number() over (partition by ss_store_sk order by ss_store_sk) as rownum, count(*) over (partition by ss_store_sk) as groupsize
+from store_sales order by rand()) tmp
+where tmp.rownum <= 100 or (tmp.rownum > 100 and rand(unix_timestamp()) < (100 / 10) / tmp.groupsize)
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table if not exists ss_st_3_100 like tpcds_5000_text.store_sales stored as parquet
+Fetched 0 row(s) in 0.01s
+Query: insert overwrite table ss_st_3_100
+select
+ss_sold_date_sk,ss_sold_time_sk,ss_item_sk,ss_customer_sk,ss_cdemo_sk,ss_hdemo_sk,ss_addr_sk,ss_store_sk,ss_promo_sk,ss_ticket_number,ss_quantity,ss_wholesale_cost,ss_list_price,ss_sales_price,ss_ext_discount_amt,ss_ext_sales_price,ss_ext_wholesale_cost,ss_ext_list_price,ss_ext_tax,ss_coupon_amt,ss_net_paid,ss_net_paid_inc_tax,ss_net_profit
+from
+(select *, row_number() over (partition by ss_store_sk order by ss_store_sk) as rownum, count(*) over (partition by ss_store_sk) as groupsize
+from store_sales order by rand()) tmp
+where tmp.rownum <= 100 or (tmp.rownum > 100 and rand(unix_timestamp()) < (100 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 06:27:18 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=2a4361a83845bdb4:aeef9c300000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 3037 row(s) in 8739.09s
+Query: create table if not exists ss_st_3_1000 like tpcds_5000_text.store_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table ss_st_3_1000
+select
+ss_sold_date_sk,ss_sold_time_sk,ss_item_sk,ss_customer_sk,ss_cdemo_sk,ss_hdemo_sk,ss_addr_sk,ss_store_sk,ss_promo_sk,ss_ticket_number,ss_quantity,ss_wholesale_cost,ss_list_price,ss_sales_price,ss_ext_discount_amt,ss_ext_sales_price,ss_ext_wholesale_cost,ss_ext_list_price,ss_ext_tax,ss_coupon_amt,ss_net_paid,ss_net_paid_inc_tax,ss_net_profit
+from
+(select *, row_number() over (partition by ss_store_sk order by ss_store_sk) as rownum, count(*) over (partition by ss_store_sk) as groupsize
+from store_sales order by rand()) tmp
+where tmp.rownum <= 1000 or (tmp.rownum > 1000 and rand(unix_timestamp()) < (1000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 08:52:58 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=594b5798ad79f386:fa79cbde00000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 30779 row(s) in 7906.83s
+Query: create table if not exists cs_uv_1_1p like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.10s
+Query: insert overwrite cs_uv_1_1p
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(
+select * from catalog_sales where abs(fnv_hash(concat_ws(',', cast(cs_item_sk as string), cast(cs_order_number as string)))) % 100000000 < (100000000 / 100)
+) tmp
+Query submitted at: 2018-09-28 11:04:45 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=58420afda36ce80e:4b7b18c000000000
+Modified 71995953 row(s) in 231.32s
+Query: create table if not exists cs_uv_1_10p like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite cs_uv_1_10p
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(
+select * from catalog_sales where abs(fnv_hash(concat_ws(',', cast(cs_item_sk as string), cast(cs_order_number as string)))) % 100000000 < (100000000 / 10)
+) tmp
+Query submitted at: 2018-09-28 11:08:36 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a344ec4988342fa0:3590da8900000000
+Modified 719995553 row(s) in 149.82s
+Query: create table if not exists cr_uv_1_1p like tpcds_5000_text.catalog_returns stored as parquet
+Fetched 0 row(s) in 3.79s
+Query: insert overwrite cr_uv_1_1p
+select
+cr_returned_date_sk,cr_returned_time_sk,cr_item_sk,cr_refunded_customer_sk,cr_refunded_cdemo_sk,cr_refunded_hdemo_sk,cr_refunded_addr_sk,cr_returning_customer_sk,cr_returning_cdemo_sk,cr_returning_hdemo_sk,cr_returning_addr_sk,cr_call_center_sk,cr_catalog_page_sk,cr_ship_mode_sk,cr_warehouse_sk,cr_reason_sk,cr_order_number,cr_return_quantity,cr_return_amount,cr_return_tax,cr_return_amt_inc_tax,cr_fee,cr_return_ship_cost,cr_refunded_cash,cr_reversed_charge,cr_store_credit,cr_net_loss
+from
+(
+select * from catalog_returns where abs(fnv_hash(concat_ws(',', cast(cr_item_sk as string), cast(cr_order_number as string)))) % 100000000 < (100000000 / 100)
+) tmp
+Query submitted at: 2018-09-28 11:11:10 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=954877feae1445cc:b7b4954000000000
+Modified 7199982 row(s) in 35.07s
+Query: create table if not exists cr_uv_1_10p like tpcds_5000_text.catalog_returns stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite cr_uv_1_10p
+select
+cr_returned_date_sk,cr_returned_time_sk,cr_item_sk,cr_refunded_customer_sk,cr_refunded_cdemo_sk,cr_refunded_hdemo_sk,cr_refunded_addr_sk,cr_returning_customer_sk,cr_returning_cdemo_sk,cr_returning_hdemo_sk,cr_returning_addr_sk,cr_call_center_sk,cr_catalog_page_sk,cr_ship_mode_sk,cr_warehouse_sk,cr_reason_sk,cr_order_number,cr_return_quantity,cr_return_amount,cr_return_tax,cr_return_amt_inc_tax,cr_fee,cr_return_ship_cost,cr_refunded_cash,cr_reversed_charge,cr_store_credit,cr_net_loss
+from
+(
+select * from catalog_returns where abs(fnv_hash(concat_ws(',', cast(cr_item_sk as string), cast(cr_order_number as string)))) % 100000000 < (100000000 / 10)
+) tmp
+Query submitted at: 2018-09-28 11:11:45 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=ea4642dcb51d1d79:4febb22400000000
+Modified 71998648 row(s) in 19.88s
+Query: create table if not exists ws_uv_1_1p like tpcds_5000_text.web_sales stored as parquet
+Fetched 0 row(s) in 2.98s
+Query: insert overwrite ws_uv_1_1p
+select
+ws_sold_date_sk,ws_sold_time_sk,ws_ship_date_sk,ws_item_sk,ws_bill_customer_sk,ws_bill_cdemo_sk,ws_bill_hdemo_sk,ws_bill_addr_sk,ws_ship_customer_sk,ws_ship_cdemo_sk,ws_ship_hdemo_sk,ws_ship_addr_sk,ws_web_page_sk,ws_web_site_sk,ws_ship_mode_sk,ws_warehouse_sk,ws_promo_sk,ws_order_number,ws_quantity,ws_wholesale_cost,ws_list_price,ws_sales_price,ws_ext_discount_amt,ws_ext_sales_price,ws_ext_wholesale_cost,ws_ext_list_price,ws_ext_tax,ws_coupon_amt,ws_ext_ship_cost,ws_net_paid,ws_net_paid_inc_tax,ws_net_paid_inc_ship,ws_net_paid_inc_ship_tax,ws_net_profit
+from
+(
+select * from web_sales where abs(fnv_hash(concat_ws(',', cast(ws_item_sk as string), cast(ws_order_number as string)))) % 100000000 < (100000000 / 100)
+) tmp
+Query submitted at: 2018-09-28 11:12:08 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a14d663cc633085f:e89ac07b00000000
+Modified 36009717 row(s) in 119.22s
+Query: create table if not exists ws_uv_1_10p like tpcds_5000_text.web_sales stored as parquet
+Fetched 0 row(s) in 0.10s
+Query: insert overwrite ws_uv_1_10p
+select
+ws_sold_date_sk,ws_sold_time_sk,ws_ship_date_sk,ws_item_sk,ws_bill_customer_sk,ws_bill_cdemo_sk,ws_bill_hdemo_sk,ws_bill_addr_sk,ws_ship_customer_sk,ws_ship_cdemo_sk,ws_ship_hdemo_sk,ws_ship_addr_sk,ws_web_page_sk,ws_web_site_sk,ws_ship_mode_sk,ws_warehouse_sk,ws_promo_sk,ws_order_number,ws_quantity,ws_wholesale_cost,ws_list_price,ws_sales_price,ws_ext_discount_amt,ws_ext_sales_price,ws_ext_wholesale_cost,ws_ext_list_price,ws_ext_tax,ws_coupon_amt,ws_ext_ship_cost,ws_net_paid,ws_net_paid_inc_tax,ws_net_paid_inc_ship,ws_net_paid_inc_ship_tax,ws_net_profit
+from
+(
+select * from web_sales where abs(fnv_hash(concat_ws(',', cast(ws_item_sk as string), cast(ws_order_number as string)))) % 100000000 < (100000000 / 10)
+) tmp
+Query submitted at: 2018-09-28 11:14:07 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=2a4b0d43b519ded4:c6dc935e00000000
+Modified 359987993 row(s) in 77.88s
+Query: create table if not exists wr_uv_1_1p like tpcds_5000_text.web_returns stored as parquet
+Fetched 0 row(s) in 2.88s
+Query: insert overwrite wr_uv_1_1p
+select
+wr_returned_date_sk,wr_returned_time_sk,wr_item_sk,wr_refunded_customer_sk,wr_refunded_cdemo_sk,wr_refunded_hdemo_sk,wr_refunded_addr_sk,wr_returning_customer_sk,wr_returning_cdemo_sk,wr_returning_hdemo_sk,wr_returning_addr_sk,wr_web_page_sk,wr_reason_sk,wr_order_number,wr_return_quantity,wr_return_amt,wr_return_tax,wr_return_amt_inc_tax,wr_fee,wr_return_ship_cost,wr_refunded_cash,wr_reversed_charge,wr_account_credit,wr_net_loss
+from
+(
+select * from web_returns where abs(fnv_hash(concat_ws(',', cast(wr_item_sk as string), cast(wr_order_number as string)))) % 100000000 < (100000000 / 100)
+) tmp
+Query submitted at: 2018-09-28 11:15:28 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=524e8e7e14356aa3:5eb42f6400000000
+Modified 3600189 row(s) in 22.54s
+Query: create table if not exists wr_uv_1_10p like tpcds_5000_text.web_returns stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite wr_uv_1_10p
+select
+wr_returned_date_sk,wr_returned_time_sk,wr_item_sk,wr_refunded_customer_sk,wr_refunded_cdemo_sk,wr_refunded_hdemo_sk,wr_refunded_addr_sk,wr_returning_customer_sk,wr_returning_cdemo_sk,wr_returning_hdemo_sk,wr_returning_addr_sk,wr_web_page_sk,wr_reason_sk,wr_order_number,wr_return_quantity,wr_return_amt,wr_return_tax,wr_return_amt_inc_tax,wr_fee,wr_return_ship_cost,wr_refunded_cash,wr_reversed_charge,wr_account_credit,wr_net_loss
+from
+(
+select * from web_returns where abs(fnv_hash(concat_ws(',', cast(wr_item_sk as string), cast(wr_order_number as string)))) % 100000000 < (100000000 / 10)
+) tmp
+Query submitted at: 2018-09-28 11:15:50 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=a54cb19cdb78bd01:d7a6b97a00000000
+Modified 35999948 row(s) in 12.62s
+Query: create table if not exists cs_st_2_100 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table cs_st_2_100
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_catalog_page_sk order by cs_catalog_page_sk) as rownum, count(*) over (partition by cs_catalog_page_sk) as groupsize
+from catalog_sales order by rand()) tmp
+where tmp.rownum <= 100 or (tmp.rownum > 100 and rand(unix_timestamp()) < (100 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 11:16:03 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=2740fa5b903b467b:fbceb9c400000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 724888 row(s) in 4340.90s
+Query: create table if not exists cs_st_2_1000 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table cs_st_2_1000
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_catalog_page_sk order by cs_catalog_page_sk) as rownum, count(*) over (partition by cs_catalog_page_sk) as groupsize
+from catalog_sales order by rand()) tmp
+where tmp.rownum <= 1000 or (tmp.rownum > 1000 and rand(unix_timestamp()) < (1000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 12:28:24 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=f1467330791ca6a5:b2461e9000000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 7244574 row(s) in 4146.02s
+Query: create table if not exists ws_st_1_100 like tpcds_5000_text.web_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table ws_st_1_100
+select
+ws_sold_date_sk,ws_sold_time_sk,ws_ship_date_sk,ws_item_sk,ws_bill_customer_sk,ws_bill_cdemo_sk,ws_bill_hdemo_sk,ws_bill_addr_sk,ws_ship_customer_sk,ws_ship_cdemo_sk,ws_ship_hdemo_sk,ws_ship_addr_sk,ws_web_page_sk,ws_web_site_sk,ws_ship_mode_sk,ws_warehouse_sk,ws_promo_sk,ws_order_number,ws_quantity,ws_wholesale_cost,ws_list_price,ws_sales_price,ws_ext_discount_amt,ws_ext_sales_price,ws_ext_wholesale_cost,ws_ext_list_price,ws_ext_tax,ws_coupon_amt,ws_ext_ship_cost,ws_net_paid,ws_net_paid_inc_tax,ws_net_paid_inc_ship,ws_net_paid_inc_ship_tax,ws_net_profit
+from
+(select *, row_number() over (partition by ws_web_site_sk order by ws_web_site_sk) as rownum, count(*) over (partition by ws_web_site_sk) as groupsize
+from web_sales order by rand()) tmp
+where tmp.rownum <= 100 or (tmp.rownum > 100 and rand(unix_timestamp()) < (100 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 13:37:30 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=3a4e036be653a2d9:ea29ba2600000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 3671 row(s) in 1817.86s
+Query: create table if not exists ws_st_1_1000 like tpcds_5000_text.web_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table ws_st_1_1000
+select
+ws_sold_date_sk,ws_sold_time_sk,ws_ship_date_sk,ws_item_sk,ws_bill_customer_sk,ws_bill_cdemo_sk,ws_bill_hdemo_sk,ws_bill_addr_sk,ws_ship_customer_sk,ws_ship_cdemo_sk,ws_ship_hdemo_sk,ws_ship_addr_sk,ws_web_page_sk,ws_web_site_sk,ws_ship_mode_sk,ws_warehouse_sk,ws_promo_sk,ws_order_number,ws_quantity,ws_wholesale_cost,ws_list_price,ws_sales_price,ws_ext_discount_amt,ws_ext_sales_price,ws_ext_wholesale_cost,ws_ext_list_price,ws_ext_tax,ws_coupon_amt,ws_ext_ship_cost,ws_net_paid,ws_net_paid_inc_tax,ws_net_paid_inc_ship,ws_net_paid_inc_ship_tax,ws_net_profit
+from
+(select *, row_number() over (partition by ws_web_site_sk order by ws_web_site_sk) as rownum, count(*) over (partition by ws_web_site_sk) as groupsize
+from web_sales order by rand()) tmp
+where tmp.rownum <= 1000 or (tmp.rownum > 1000 and rand(unix_timestamp()) < (1000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 14:07:48 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=554f2c51bf3369c5:a0201c7000000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 36087 row(s) in 1832.57s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table if not exists ss_st_3_10000 like tpcds_5000_text.store_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table ss_st_3_10000
+select
+ss_sold_date_sk,ss_sold_time_sk,ss_item_sk,ss_customer_sk,ss_cdemo_sk,ss_hdemo_sk,ss_addr_sk,ss_store_sk,ss_promo_sk,ss_ticket_number,ss_quantity,ss_wholesale_cost,ss_list_price,ss_sales_price,ss_ext_discount_amt,ss_ext_sales_price,ss_ext_wholesale_cost,ss_ext_list_price,ss_ext_tax,ss_coupon_amt,ss_net_paid,ss_net_paid_inc_tax,ss_net_profit
+from
+(select *, row_number() over (partition by ss_store_sk order by ss_store_sk) as rownum, count(*) over (partition by ss_store_sk) as groupsize
+from store_sales order by rand()) tmp
+where tmp.rownum <= 10000 or (tmp.rownum > 10000 and rand(unix_timestamp()) < (10000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 14:53:47 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9d47fd7ed17acd62:4408cf5700000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 307637 row(s) in 8780.01s
+Query: create table if not exists cs_st_2_10000 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table cs_st_2_10000
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_catalog_page_sk order by cs_catalog_page_sk) as rownum, count(*) over (partition by cs_catalog_page_sk) as groupsize
+from catalog_sales order by rand()) tmp
+where tmp.rownum <= 10000 or (tmp.rownum > 10000 and rand(unix_timestamp()) < (10000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 17:20:07 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=91438a8523ca6ae9:640cf65e00000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 72302539 row(s) in 4032.34s
+Query: create table if not exists ws_st_1_10000 like tpcds_5000_text.web_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table ws_st_1_10000
+select
+ws_sold_date_sk,ws_sold_time_sk,ws_ship_date_sk,ws_item_sk,ws_bill_customer_sk,ws_bill_cdemo_sk,ws_bill_hdemo_sk,ws_bill_addr_sk,ws_ship_customer_sk,ws_ship_cdemo_sk,ws_ship_hdemo_sk,ws_ship_addr_sk,ws_web_page_sk,ws_web_site_sk,ws_ship_mode_sk,ws_warehouse_sk,ws_promo_sk,ws_order_number,ws_quantity,ws_wholesale_cost,ws_list_price,ws_sales_price,ws_ext_discount_amt,ws_ext_sales_price,ws_ext_wholesale_cost,ws_ext_list_price,ws_ext_tax,ws_coupon_amt,ws_ext_ship_cost,ws_net_paid,ws_net_paid_inc_tax,ws_net_paid_inc_ship,ws_net_paid_inc_ship_tax,ws_net_profit
+from
+(select *, row_number() over (partition by ws_web_site_sk order by ws_web_site_sk) as rownum, count(*) over (partition by ws_web_site_sk) as groupsize
+from web_sales order by rand()) tmp
+where tmp.rownum <= 10000 or (tmp.rownum > 10000 and rand(unix_timestamp()) < (10000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 18:27:19 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=4c4e60fad0284664:a9c5da7e00000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 363359 row(s) in 1887.47s
+Query: create table if not exists ss_st_3_100000 like tpcds_5000_text.store_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table ss_st_3_100000
+select
+ss_sold_date_sk,ss_sold_time_sk,ss_item_sk,ss_customer_sk,ss_cdemo_sk,ss_hdemo_sk,ss_addr_sk,ss_store_sk,ss_promo_sk,ss_ticket_number,ss_quantity,ss_wholesale_cost,ss_list_price,ss_sales_price,ss_ext_discount_amt,ss_ext_sales_price,ss_ext_wholesale_cost,ss_ext_list_price,ss_ext_tax,ss_coupon_amt,ss_net_paid,ss_net_paid_inc_tax,ss_net_profit
+from
+(select *, row_number() over (partition by ss_store_sk order by ss_store_sk) as rownum, count(*) over (partition by ss_store_sk) as groupsize
+from store_sales order by rand()) tmp
+where tmp.rownum <= 100000 or (tmp.rownum > 100000 and rand(unix_timestamp()) < (100000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 18:58:47 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=5745f251f37c7b44:2ea769eb00000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 3077121 row(s) in 8833.39s
+Query: create table if not exists cs_st_2_100000 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table cs_st_2_100000
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_catalog_page_sk order by cs_catalog_page_sk) as rownum, count(*) over (partition by cs_catalog_page_sk) as groupsize
+from catalog_sales order by rand()) tmp
+where tmp.rownum <= 100000 or (tmp.rownum > 100000 and rand(unix_timestamp()) < (100000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 21:26:00 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=f7460a8a5b32fe1b:185175a400000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 707585058 row(s) in 4091.57s
+Query: create table if not exists ws_st_1_100000 like tpcds_5000_text.web_sales stored as parquet
+Fetched 0 row(s) in 0.10s
+Query: insert overwrite table ws_st_1_100000
+select
+ws_sold_date_sk,ws_sold_time_sk,ws_ship_date_sk,ws_item_sk,ws_bill_customer_sk,ws_bill_cdemo_sk,ws_bill_hdemo_sk,ws_bill_addr_sk,ws_ship_customer_sk,ws_ship_cdemo_sk,ws_ship_hdemo_sk,ws_ship_addr_sk,ws_web_page_sk,ws_web_site_sk,ws_ship_mode_sk,ws_warehouse_sk,ws_promo_sk,ws_order_number,ws_quantity,ws_wholesale_cost,ws_list_price,ws_sales_price,ws_ext_discount_amt,ws_ext_sales_price,ws_ext_wholesale_cost,ws_ext_list_price,ws_ext_tax,ws_coupon_amt,ws_ext_ship_cost,ws_net_paid,ws_net_paid_inc_tax,ws_net_paid_inc_ship,ws_net_paid_inc_ship_tax,ws_net_profit
+from
+(select *, row_number() over (partition by ws_web_site_sk order by ws_web_site_sk) as rownum, count(*) over (partition by ws_web_site_sk) as groupsize
+from web_sales order by rand()) tmp
+where tmp.rownum <= 100000 or (tmp.rownum > 100000 and rand(unix_timestamp()) < (100000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-28 22:34:12 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=e4401a2efa56bb00:1cc8b8b300000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 3627164 row(s) in 1901.46s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table if not exists cs_st_3_1000 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table cs_st_3_1000
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_sold_date_sk, w_state, i_item_id order by w_state, i_item_id) as rownum, count(*) over (partition by cs_sold_date_sk, w_state, i_item_id) as groupsize
+from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and cs_item_sk = i_item_sk order by rand()) tmp
+where tmp.rownum <= 1000 or (tmp.rownum > 1000 and rand(unix_timestamp()) < (1000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-30 14:40:55 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=4044a80ace2b350a:4e4bb26200000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 7164074506 row(s) in 5687.54s
+Query: create table if not exists cs_st_3_10000 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table cs_st_3_10000
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_sold_date_sk, w_state, i_item_id order by w_state, i_item_id) as rownum, count(*) over (partition by cs_sold_date_sk, w_state, i_item_id) as groupsize
+from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and cs_item_sk = i_item_sk order by rand()) tmp
+where tmp.rownum <= 10000 or (tmp.rownum > 10000 and rand(unix_timestamp()) < (10000 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-30 16:15:43 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=c443fc2ac0399786:ab143d3300000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 7164074506 row(s) in 6430.78s
+Cannot start "/usr/sbin/sendmail": executable not found (adjust *sendmail* variable)
+... message not sent
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table if not exists cs_st_3_10 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.10s
+Query: insert overwrite table cs_st_3_10
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_sold_date_sk, w_state, i_item_id order by w_state, i_item_id) as rownum, count(*) over (partition by cs_sold_date_sk, w_state, i_item_id) as groupsize
+from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and cs_item_sk = i_item_sk order by rand()) tmp
+where tmp.rownum <= 10 or (tmp.rownum > 10 and rand(unix_timestamp()) < (10 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-30 19:07:26 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=364386d85ec91041:c2be28c800000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 1188006993 row(s) in 6021.37s
+Starting Impala Shell without Kerberos authentication
+Connected to cp-1:21000
+Server version: impalad version 2.12.0-cdh5.15.1 RELEASE (build 64f4e19bf59fab8664ebff7e80fc70570dcd8cb8)
+Query: use tpcds_5000_parquet
+Query: create table if not exists cs_st_3_20 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table cs_st_3_20
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_sold_date_sk, w_state, i_item_id order by w_state, i_item_id) as rownum, count(*) over (partition by cs_sold_date_sk, w_state, i_item_id) as groupsize
+from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and cs_item_sk = i_item_sk order by rand()) tmp
+where tmp.rownum <= 20 or (tmp.rownum > 20 and rand(unix_timestamp()) < (20 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-30 21:05:52 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=6f44b820bb835846:a06745be00000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 2325027685 row(s) in 5386.75s
+Query: create table if not exists cs_st_3_30 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.09s
+Query: insert overwrite table cs_st_3_30
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_sold_date_sk, w_state, i_item_id order by w_state, i_item_id) as rownum, count(*) over (partition by cs_sold_date_sk, w_state, i_item_id) as groupsize
+from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and cs_item_sk = i_item_sk order by rand()) tmp
+where tmp.rownum <= 30 or (tmp.rownum > 30 and rand(unix_timestamp()) < (30 / 10) / tmp.groupsize)
+Query submitted at: 2018-09-30 22:35:39 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=df4e6aa85086a510:9857b14200000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 3328561709 row(s) in 5901.16s
+Query: create table if not exists cs_st_3_50 like tpcds_5000_text.catalog_sales stored as parquet
+Fetched 0 row(s) in 0.08s
+Query: insert overwrite table cs_st_3_50
+select
+cs_sold_date_sk,cs_sold_time_sk,cs_ship_date_sk,cs_bill_customer_sk,cs_bill_cdemo_sk,cs_bill_hdemo_sk,cs_bill_addr_sk,cs_ship_customer_sk,cs_ship_cdemo_sk,cs_ship_hdemo_sk,cs_ship_addr_sk,cs_call_center_sk,cs_catalog_page_sk,cs_ship_mode_sk,cs_warehouse_sk,cs_item_sk,cs_promo_sk,cs_order_number,cs_quantity,cs_wholesale_cost,cs_list_price,cs_sales_price,cs_ext_discount_amt,cs_ext_sales_price,cs_ext_wholesale_cost,cs_ext_list_price,cs_ext_tax,cs_coupon_amt,cs_ext_ship_cost,cs_net_paid,cs_net_paid_inc_tax,cs_net_paid_inc_ship,cs_net_paid_inc_ship_tax,cs_net_profit
+from
+(select *, row_number() over (partition by cs_sold_date_sk, w_state, i_item_id order by w_state, i_item_id) as rownum, count(*) over (partition by cs_sold_date_sk, w_state, i_item_id) as groupsize
+from catalog_sales, item, warehouse where cs_warehouse_sk = w_warehouse_sk and cs_item_sk = i_item_sk order by rand()) tmp
+where tmp.rownum <= 50 or (tmp.rownum > 50 and rand(unix_timestamp()) < (50 / 10) / tmp.groupsize)
+Query submitted at: 2018-10-01 00:14:01 (Coordinator: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000)
+Query progress can be monitored at: http://cp-1.cloudera-test.rdmaresearch-pg0.wisc.cloudlab.us:25000/query_plan?query_id=9f43ad3c08628e79:570f546300000000
+WARNINGS: Ignoring ORDER BY clause without LIMIT or OFFSET: ORDER BY rand() ASC.
+An ORDER BY appearing in a view, subquery, union operand, or an insert/ctas statement has no effect on the query result unless a LIMIT and/or OFFSET is used in conjunction with the ORDER BY.
+
+Modified 4659673181 row(s) in 6095.90s
